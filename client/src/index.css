@@ -2,19 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@keyframes s3 {
-  to {
-    transform: rotate(1turn)
-  }
-}
-
-.login-input {
-  border: none !important;
-  border-bottom: 1px solid !important;
-  border-color: #adadad !important;
-}
-
-.login-input:focus {
-  border-bottom: 1px solid transparent !important;
-}
