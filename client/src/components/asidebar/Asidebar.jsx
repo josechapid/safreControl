@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import safreLogo from "../../assets/image/safreLogo.png";
 import Home from "../../assets/icons/home.svg";
 import Table from "../../assets/icons/table.svg";
@@ -10,10 +11,12 @@ function Asidebar() {
   return (
     <div className="flex flex-col gap-5 max-w-14 items-center">
       <div>
-        <img className="w-12 h-12" src={safreLogo} alt="" />
+        <img className="w-12 h-12" src={safreLogo} alt="Logo" />
       </div>
       <div className="mt-5 flex flex-col space-y-5">
-        <img className="w-10 h-10" src={Home} alt="" />
+        <Link to="/home">
+          <img className="w-10 h-10 cursor-pointer" src={Home} alt="" />
+        </Link>
         <img className="w-10 h-10" src={Table} alt="" />
         <img className="w-10 h-10" src={Cards} alt="" />
         <img className="w-10 h-10" src={Pay} alt="" />
