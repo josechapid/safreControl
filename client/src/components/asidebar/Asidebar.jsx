@@ -19,7 +19,9 @@ function Asidebar() {
         </Link>
         <img className="w-10 h-10" src={Table} alt="" />
         <img className="w-10 h-10" src={Cards} alt="" />
-        <img className="w-10 h-10" src={Pay} alt="" />
+        <Link to="/pay">
+          <img className="w-10 h-10" src={Pay} alt="" />
+        </Link>
         <img className="w-10 h-10" src={Statistics} alt="" />
         <img className="w-10 h-10" src={Setting} alt="" />
       </div>
