@@ -1,0 +1,11 @@
+<svg width="64" height="65" viewBox="0 0 64 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.717041" width="63" height="63" rx="9.5" fill="#252836"/>
+<rect x="0.5" y="0.717041" width="63" height="63" rx="9.5" stroke="#EA7C69"/>
+<path d="M27 25.217V27.217" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37 25.217V27.217" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 24.217V26.217" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43.8002 30.217C42.9002 24.517 37.9002 20.217 32.0002 20.217C26.1002 20.217 21.1002 24.517 20.2002 30.217H43.8002Z" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 32.217L21.5 33.217C22.4 33.817 23.6 33.817 24.5 33.217C25.4 32.617 26.6 32.617 27.5 33.217C28.4 33.817 29.6 33.817 30.5 33.217C31.4 32.617 32.6 32.617 33.5 33.217C34.4 33.817 35.6 33.817 36.5 33.217C37.4 32.617 38.6 32.617 39.5 33.217C40.4 33.817 41.6 33.817 42.5 33.217L44 32.217" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 40.217H21C19.9 40.217 19 39.317 19 38.217C19 37.117 19.9 36.217 21 36.217H43C44.1 36.217 45 37.117 45 38.217C45 39.317 44.1 40.217 43 40.217Z" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 40.217V41.617C43 43.117 41.8 44.217 40.4 44.217H23.6C22.2 44.217 21 43.017 21 41.617V40.217" stroke="#EA7C69" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

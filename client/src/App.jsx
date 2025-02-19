@@ -6,6 +6,7 @@ import Asidebar from "./components/asidebar/Asidebar";
 import Home from "./view/home/Home";
 import LandingPage from "./view/landingPage/LandingPage";
 import Login from "./view/login/Login";
+import Pay from "./view/pay/Pay";
 
 //? hook
 // import { useSelector } from "react-redux";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/pay" element={<Pay />} />
       </Routes>
     </>
   );
