@@ -8,6 +8,7 @@ function Navbar() {
       <div>
         <img src={safreImg} alt="LogoSafre" />
       </div>
+
       <div className="flex border-l border-white gap-5 items-center ">
         <div className="flex-col pl-5">
           <p>Nombre Apellido</p>
