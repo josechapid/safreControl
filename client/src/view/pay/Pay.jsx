@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 import Icono_select from "../../assets/icons/icono_select.svg";
+import PayIcon from "../../assets/icons/PayIcon.svg";
 
 function Pay() {
   const [activeSection, setActiveSection] = useState(null);
@@ -9,6 +10,14 @@ function Pay() {
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
+  const [stateSell, setStateSell] = useState("");
+  const [payments, setPayments] = useState("");
+  const [table, setTable] = useState("");
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleVentasClick = () => {
+    setShowDetails(true); // Show the details when the "Ventas" button is clicked
+  };
 
   return (
     <div className="flex flex-col items-center p-6 text-left text-black bg-blue_grisaceo-50 min-h-screen ">
@@ -22,7 +31,10 @@ function Pay() {
               ? "bg-black text-white"
               : "bg-white text-black border border-gray-400"
           }`}
-          onClick={() => setActiveSection("ventas")}
+          onClick={() => {
+            setActiveSection("ventas");
+            handleVentasClick();
+          }}
         >
           Ventas
         </button>
@@ -38,7 +50,7 @@ function Pay() {
         </button>
       </div>
       {/*Selects*/}
-      <div className="w-full bg-blue_grisaceo-50 p-4 rounded-lg flex flex-wrap gap-4 justify-center">
+      <div className="w-full bg-blue_grisaceo-50 p-4 rounded-lg flex flex-wrap gap-4 justify-left">
         <div>
           <img className="w-10 h-10" src={Icono_select} alt="" />
         </div>
@@ -108,18 +120,18 @@ function Pay() {
             }}
             label="Mes"
           >
-            <MenuItem value="Enero">Enero</MenuItem>
-            <MenuItem value="Febrero">Febrero</MenuItem>
-            <MenuItem value="Marzo">Marzo</MenuItem>
-            <MenuItem value="Abril">Abril</MenuItem>
-            <MenuItem value="Mayo">Mayo</MenuItem>
-            <MenuItem value="Junio">Junio</MenuItem>
-            <MenuItem value="Julio">Julio</MenuItem>
-            <MenuItem value="Agosto">Agosto</MenuItem>
-            <MenuItem value="Septiembre">Septiembre</MenuItem>
-            <MenuItem value="Octubre">Octubre</MenuItem>
-            <MenuItem value="Noviembre">Noviembre</MenuItem>
-            <MenuItem value="Diciembre">Diciembre</MenuItem>
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="5">5</MenuItem>
+            <MenuItem value="6">6</MenuItem>
+            <MenuItem value="7">7</MenuItem>
+            <MenuItem value="8">8</MenuItem>
+            <MenuItem value="9">9</MenuItem>
+            <MenuItem value="10">10</MenuItem>
+            <MenuItem value="11">11</MenuItem>
+            <MenuItem value="12">12</MenuItem>
           </Select>
         </FormControl>
 
@@ -141,10 +153,94 @@ function Pay() {
           </Select>
         </FormControl>
       </div>
+      <div className="w-full bg-blue_grisaceo-50 p-4 rounded-lg flex flex-wrap gap-4 justify-left">
+        <div>
+          <img className="w-10 h-10" src={PayIcon} alt="" />
+        </div>
+        <FormControl size="small" className="w-40">
+          <InputLabel sx={{ color: "black" }}>Estado de Venta</InputLabel>
+          <Select
+            value={stateSell}
+            onChange={(e) => setStateSell(e.target.value)}
+            sx={{
+              backgroundColor: "white",
+              color: "black",
+              "& .MuiSelect-icon": { color: "black" },
+            }}
+            label="Estado de Venta"
+          >
+            <MenuItem value="Cerrado">Cerrado</MenuItem>
+            <MenuItem value="Cancelado">Cancelado</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl size="small" className="w-40">
+          <InputLabel sx={{ color: "black" }}>Medio de Pago</InputLabel>
+          <Select
+            value={payments}
+            onChange={(e) => setPayments(e.target.value)}
+            sx={{
+              backgroundColor: "white",
+              color: "black",
+              "& .MuiSelect-icon": { color: "black" },
+            }}
+            label="Medio de pago"
+          >
+            <MenuItem value="Efectivo">Efectivo</MenuItem>
+            <MenuItem value="Debito">Debito</MenuItem>
+            <MenuItem value="Credito">Credito</MenuItem>
+          </Select>
+        </FormControl>
+
+        <FormControl size="small" className="w-40">
+          <InputLabel sx={{ color: "black" }}>Mesa</InputLabel>
+          <Select
+            value={table}
+            onChange={(e) => setTable(e.target.value)}
+            sx={{
+              backgroundColor: "white",
+              color: "black",
+              "& .MuiSelect-icon": { color: "black" },
+            }}
+            label="Mesa"
+          >
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="5">5</MenuItem>
+            <MenuItem value="6">6</MenuItem>
+            <MenuItem value="7">7</MenuItem>
+            <MenuItem value="8">8</MenuItem>
+            <MenuItem value="9">9</MenuItem>
+            <MenuItem value="10">10</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
 
       {/*Contenido Dinamico*/}
       <div className="w-full p-5 bg-gray-800 rounded-lg">
-        {activeSection === "ventas" && <div>Contenido de Ventas</div>}
+        {activeSection === "ventas" && showDetails && (
+          <div className="bg-white p-4 rounded-lg">
+            {/* Franja */}
+            <div className="flex space-x-10 justify-left mb-4">
+              {/* Títulos arriba */}
+              <div className="font-bold text-lg">Cod</div>
+              <div className="font-bold text-lg">Estado</div>
+              <div className="font-bold text-lg">Fecha</div>
+              <div className="font-bold text-lg">Hora</div>
+            </div>
+
+            {/* Información debajo de cada título */}
+            <div className="flex space-x-8 justify-left">
+              <div className="text-xl">{table}</div>
+              <div className="text-xl">{stateSell}</div>
+              <div className="text-xl">{`${day} ${month} ${year}`}</div>
+              <div className="text-xl">{hour}</div>
+            </div>
+          </div>
+        )}
+
         {activeSection === "movimientos" && (
           <div>Contenido de Movimientos de Caja</div>
         )}
