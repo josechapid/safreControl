@@ -9,20 +9,36 @@ import Login from "./view/login/Login";
 import Pay from "./view/pay/Pay";
 
 //? hook
-// import { useSelector } from "react-redux";
-// import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showLanding, setShowLanding] = useState(true);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setShowLanding(false);
+    }
+  }, [location]);
+
   return (
     <>
-      <Navbar />
-      <Asidebar />
+      {!showLanding && (
+        <>
+          <Navbar />
+          <Asidebar />
+        </>
+      )}
 
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/"
+          element={<LandingPage onEnter={() => navigate("/home")} />}
+        />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pay" element={<Pay />} />
