@@ -17,6 +17,7 @@ import "./App.css";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated]= useState(false)
   const [showLanding, setShowLanding] = useState(true);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
   return (
     <>
       {!showLanding ? (
+        isAuthenticated ? (
         <div className="app-container">
           <div className="sidebar">
             <Asidebar />
@@ -37,21 +39,21 @@ function App() {
           </div>
           <div className="content">
             <Routes>
-              <Route
-                path="/"
-                element={<LandingPage onEnter={() => navigate("/home")} />}
-              />
               <Route path="/home" element={<Home />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/pay" element={<Pay />} />
             </Routes>
           </div>
         </div>
       ) : (
         <Routes>
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
+        </Routes>
+      )
+      ) : (
+        <Routes>
           <Route
             path="/"
-            element={<LandingPage onEnter={() => navigate("/home")} />}
+            element={<LandingPage onEnter={() => navigate("/login")} />}
           />
         </Routes>
       )}
