@@ -28,14 +28,14 @@ function App() {
   return (
     <>
       {!showLanding ? (
-        <div className="grid grid-cols-[70px_1fr] grid-rows-[60px_1fr] h-screen">
-          <div className="row-span-2 bg-gray-900 text-white">
+        <div className="app-container">
+          <div className="sidebar">
             <Asidebar />
           </div>
-          <div className="bg-gray-800 text-white px-4 h-30 flex justify-center items-center w-full">
-            <Navbar  className="w-full"/>
+          <div className="navbar">
+            <Navbar className="w-full" />
           </div>
-          <div className="p-4 bg-gray-100 overflow-auto">
+          <div className="content">
             <Routes>
               <Route
                 path="/"
