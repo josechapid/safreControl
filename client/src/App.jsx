@@ -17,6 +17,7 @@ import "./App.css";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated]= useState(false)
   const [showLanding, setShowLanding] = useState(true);
 
   useEffect(() => {
@@ -28,30 +29,31 @@ function App() {
   return (
     <>
       {!showLanding ? (
-        <div className="grid grid-cols-[70px_1fr] grid-rows-[60px_1fr] h-screen">
-          <div className="row-span-2 bg-gray-900 text-white">
+        isAuthenticated ? (
+        <div className="app-container">
+          <div className="sidebar">
             <Asidebar />
           </div>
-          <div className="bg-gray-800 text-white px-4 h-30 flex justify-center items-center w-full">
-            <Navbar  className="w-full"/>
+          <div className="navbar">
+            <Navbar className="w-full" />
           </div>
-          <div className="p-4 bg-gray-100 overflow-auto">
+          <div className="content">
             <Routes>
-              <Route
-                path="/"
-                element={<LandingPage onEnter={() => navigate("/home")} />}
-              />
               <Route path="/home" element={<Home />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/pay" element={<Pay />} />
             </Routes>
           </div>
         </div>
       ) : (
         <Routes>
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
+        </Routes>
+      )
+      ) : (
+        <Routes>
           <Route
             path="/"
-            element={<LandingPage onEnter={() => navigate("/home")} />}
+            element={<LandingPage onEnter={() => navigate("/login")} />}
           />
         </Routes>
       )}
