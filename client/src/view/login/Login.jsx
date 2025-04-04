@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types"
 import { useNavigate } from "react-router-dom";
+import "./Login.css"
 
 function Login({setIsAuthenticated}) {
   const [credentials, setCredentials]= useState({username: "", password: ""})
@@ -15,25 +16,47 @@ function Login({setIsAuthenticated}) {
       alert("Credenciales incorrectas")
     }
   }
-
-  return(
+  
+  return (
     <div className="login-container">
-    <h2>Iniciar Sesion</h2>
-    <form onSubmit={handleLogin}>
-      <input type="text"
-      placeholder="Usuario"
-      value={credentials.username}
-      onChange={(e)=> setCredentials({...credentials, username: e.target.value})}
-      />
-      <input type="password"
-      placeholder="Contraseña"
-      value={credentials.password}
-      onChange={(e)=> setCredentials({...credentials, password: e.target.value})}
-      />
-      <button type="submit">Ingresar</button>
-    </form>
+      <form onSubmit={handleLogin} className="login">
+        <p className="title">Iniciar Sesión</p>
+
+        <div className="login-container-input">
+          <label htmlFor="name">Usuario o Email:</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Usuario"
+            className="login-input"
+            value={credentials.username}
+            onChange={(e) =>
+              setCredentials({ ...credentials, username: e.target.value })
+            }
+          />
+        </div>
+        <div className="login-container-input">
+          <label htmlFor="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Contraseña"
+            className="login-input"
+            value={credentials.password}
+            onChange={(e) =>
+              setCredentials({ ...credentials, password: e.target.value })
+            }
+          />
+        </div>
+
+        <p>¿Olvidaste tu contraseña?</p>
+        <button className="login-button" type="submit">Ingresar</button>
+        <p>¿No tienes cuenta? Registrate Aquí</p>
+      </form>
     </div>
-  ) 
+  ); 
 }
 Login.propTypes = {
   setIsAuthenticated: PropTypes.func.isRequired, 
