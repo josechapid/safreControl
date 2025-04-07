@@ -51,7 +51,7 @@ function Login({setIsAuthenticated}) {
           />
         </div>
 
-        <p>¿Olvidaste tu contraseña?</p>
+        <p className="parrafo-password">¿Olvidaste tu contraseña?</p>
         <button className="login-button" type="submit">Ingresar</button>
         <p>¿No tienes cuenta? Registrate Aquí</p>
       </form>

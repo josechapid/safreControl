@@ -8,7 +8,7 @@ function LandingPage({ onEnter }) {
       <img src={pizza} alt="pizza" className="background-image" />
 
       <div className="overlay">
-        <h1 className="title">Bienvenido</h1>
+        <h1 className="title-overlay">Bienvenido</h1>
         <button className="enter-button" onClick={onEnter}>
           Entrar
         </button>

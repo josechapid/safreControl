@@ -1,0 +1,43 @@
+.navbar {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem; /* equivale a p-5 */
+}
+
+.navbar-logo img {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-user-section {
+  display: flex;
+  border-left: 1px solid white;
+  gap: 1.25rem; /* equivale a gap-5 */
+  align-items: center;
+}
+
+.navbar-user-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.25rem; /* equivale a pl-5 */
+  text-align: right;
+}
+
+.navbar-user-info p:first-child {
+  margin: 0;
+}
+
+.navbar-user-info p:last-child {
+  margin: 0;
+}
+
+.navbar-user-img {
+  /* Puedes agregar tamaño aquí si lo necesitas */
+}
+
+.navbar-arrow-icon {
+  width: 1.25rem; /* w-5 */
+  height: 1.25rem; /* h-5 */
+}

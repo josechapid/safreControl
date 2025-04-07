@@ -16,6 +16,9 @@
 p{
     color: #EA7C69;
 }
+.parrafo-password{
+    width: 300px;
+}
 .login{
     height: 400px;
     width: 470px;
