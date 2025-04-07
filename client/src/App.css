@@ -16,14 +16,10 @@
   color: white;
   padding: 0 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 }
 
 .content {
-  padding: 1rem;
-  background-color: #f7fafc; /* bg-gray-100 */
-  overflow: auto;
+  background-color: #f7fafc; 
 }
 

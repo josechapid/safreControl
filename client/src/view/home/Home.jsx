@@ -1,6 +1,14 @@
 
+import "./Home.css"
+import loro from "../../assets/image/imagen-vectorial.jpg"
 function Home() {
-  return <div className="bg-blue-500 text-white text-center p-4">Home</div>;
+  return (
+    <div>
+      <div className="home">
+        <img className="home-image" src={loro} alt="loro" />
+      </div>
+    </div>
+  );
 }
 
 export default Home;
