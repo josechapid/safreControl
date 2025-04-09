@@ -1,14 +1,14 @@
 
-import "./Home.css"
-import loro from "../../assets/image/imagen-vectorial.jpg"
-function Home() {
+import "./Products.css"
+import paisaje from "../../assets/image/davidbesh.jpg"
+function Products() {
   return (
     <div>
       <div className="home">
-        <img className="home-image" src={loro} alt="loro" />
+        <img className="home-image" src={paisaje} alt="loro" />
       </div>
     </div>
   );
 }
 
-export default Home;
+export default Products;
