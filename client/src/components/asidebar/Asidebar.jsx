@@ -6,24 +6,35 @@ import Statistics from "../../assets/icons/statistics.svg";
 import Cards from "../../assets/icons/cards.svg";
 import Pay from "../../assets/icons/pay.svg";
 import Setting from "../../assets/icons/setting.svg";
+import "./Asidebar.css";
 
 function Asidebar() {
   return (
-    <div className="flex flex-col gap-5 max-w-14 items-center">
-      <div>
-        <img className="w-12 h-12" src={safreLogo} alt="Logo" />
+    <div className="asidebar">
+      <div className="asidebar-logo">
+        <img src={safreLogo} alt="Logo" />
       </div>
-      <div className="mt-5 flex flex-col space-y-5">
+      <div className="asidebar-menu">
         <Link to="/home">
-          <img className="w-10 h-10 cursor-pointer" src={Home} alt="" />
+          <img src={Home} alt="Home" />
         </Link>
-        <img className="w-10 h-10" src={Table} alt="" />
-        <img className="w-10 h-10" src={Cards} alt="" />
+        <Link to="Table">
+          <img src={Table} alt="Table" />
+        </Link>
+        <Link to="/Cards">
+          {" "}
+          <img src={Cards} alt="Cards" />
+        </Link>
+
         <Link to="/pay">
-          <img className="w-10 h-10" src={Pay} alt="" />
+          <img src={Pay} alt="Pay" />
         </Link>
-        <img className="w-10 h-10" src={Statistics} alt="" />
-        <img className="w-10 h-10" src={Setting} alt="" />
+        <Link to="/Statistics">
+        <img src={Statistics} alt="Statistics" />
+        </Link>
+        <Link to="/Setting">
+        <img src={Setting} alt="Setting" />
+        </Link>
       </div>
     </div>
   );

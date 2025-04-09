@@ -1,0 +1,25 @@
+.asidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* equivalente a gap-5 */
+  max-width: 3.5rem; /* equivalente a max-w-14 (56px) */
+  align-items: center;
+}
+
+.asidebar-logo img {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+}
+
+.asidebar-menu {
+  margin-top: 1.25rem; /* mt-5 */
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem; /* space-y-5 */
+}
+
+.asidebar-menu img {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+  cursor: pointer;
+}

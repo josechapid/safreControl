@@ -1,7 +1,7 @@
 
-import "./Home.css"
+import "./Settings.css"
 import loro from "../../assets/image/imagen-vectorial.jpg"
-function Home() {
+function Settings() {
   return (
     <div>
       <div className="home">
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Settings;

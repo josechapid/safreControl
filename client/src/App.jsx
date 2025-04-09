@@ -7,6 +7,11 @@ import Home from "./view/home/Home";
 import LandingPage from "./view/landingPage/LandingPage";
 import Login from "./view/login/Login";
 import Pay from "./view/pay/Pay";
+import Products from "./view/products/Products";
+import Settings from "./view/settings/Settings";
+import Tables from "./view/tables/Table";
+import Statistics from "./view/stathetics/Statistics";
+
 
 //? hook
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
@@ -41,6 +46,10 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/pay" element={<Pay />} />
+              <Route path="/pay" element={<Products />} />
+              <Route path="/pay" element={<Settings />} />
+              <Route path="/pay" element={<Tables />} />
+              <Route path="/pay" element={<Statistics />} />
             </Routes>
           </div>
         </div>

@@ -1,7 +1,7 @@
 
-import "./Home.css"
+import "./Statistics.css"
 import loro from "../../assets/image/imagen-vectorial.jpg"
-function Home() {
+function Statistics() {
   return (
     <div>
       <div className="home">
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Statistics;
