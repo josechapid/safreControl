@@ -46,10 +46,10 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/pay" element={<Pay />} />
-              <Route path="/pay" element={<Products />} />
-              <Route path="/pay" element={<Settings />} />
-              <Route path="/pay" element={<Tables />} />
-              <Route path="/pay" element={<Statistics />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/setting" element={<Settings />} />
+              <Route path="/table" element={<Tables />} />
+              <Route path="/statistics" element={<Statistics />} />
             </Routes>
           </div>
         </div>

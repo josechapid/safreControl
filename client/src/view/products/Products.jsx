@@ -4,8 +4,8 @@ import paisaje from "../../assets/image/davidbesh.jpg"
 function Products() {
   return (
     <div>
-      <div className="home">
-        <img className="home-image" src={paisaje} alt="loro" />
+      <div className="paisaje">
+        <img className="paisaje-image" src={paisaje} alt="paisaje" />
       </div>
     </div>
   );
