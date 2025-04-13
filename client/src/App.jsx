@@ -46,7 +46,7 @@ function App() {
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/pay" element={<Pay />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/cards" element={<Products />} />
               <Route path="/setting" element={<Settings />} />
               <Route path="/table" element={<Tables />} />
               <Route path="/statistics" element={<Statistics />} />
