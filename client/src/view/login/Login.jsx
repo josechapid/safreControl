@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css"
 
 function Login({setIsAuthenticated}) {
@@ -53,7 +53,7 @@ function Login({setIsAuthenticated}) {
 
         <p className="parrafo-password">¿Olvidaste tu contraseña?</p>
         <button className="login-button" type="submit">Ingresar</button>
-        <p>¿No tienes cuenta? Registrate Aquí</p>
+        <p>¿No tienes cuenta? Registrate <Link to="/singUp">Aquí</Link></p>
       </form>
     </div>
   ); 

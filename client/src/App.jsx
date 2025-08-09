@@ -11,6 +11,7 @@ import Products from "./view/products/Products";
 import Settings from "./view/settings/Settings";
 import Tables from "./view/tables/Table";
 import Statistics from "./view/stathetics/Statistics";
+import SingUp from "./view/singUp/singUp"
 
 
 //? hook
@@ -23,6 +24,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated]= useState(false)
+  const [isRegistered, setIsRegistered]= useState(false)
   const [showLanding, setShowLanding] = useState(true);
 
   useEffect(() => {
@@ -34,30 +36,37 @@ function App() {
   return (
     <>
       {!showLanding ? (
-        isAuthenticated ? (
-        <div className="app-container">
-          <div className="sidebar">
-            <Asidebar />
+        isAuthenticated || isRegistered ? (
+          <div className="app-container">
+            <div className="sidebar">
+              <Asidebar />
+            </div>
+            <div className="navbar">
+              <Navbar className="w-full" />
+            </div>
+            <div className="content">
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/pay" element={<Pay />} />
+                <Route path="/cards" element={<Products />} />
+                <Route path="/setting" element={<Settings />} />
+                <Route path="/table" element={<Tables />} />
+                <Route path="/statistics" element={<Statistics />} />
+              </Routes>
+            </div>
           </div>
-          <div className="navbar">
-            <Navbar className="w-full" />
-          </div>
-          <div className="content">
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/pay" element={<Pay />} />
-              <Route path="/cards" element={<Products />} />
-              <Route path="/setting" element={<Settings />} />
-              <Route path="/table" element={<Tables />} />
-              <Route path="/statistics" element={<Statistics />} />
-            </Routes>
-          </div>
-        </div>
-      ) : (
-        <Routes>
-          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />}/>
-        </Routes>
-      )
+        ) : (
+          <Routes>
+            <Route
+              path="/login"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
+            <Route
+              path="/singUp"
+              element={<SingUp setIsRegistered={setIsRegistered} />}
+            />
+          </Routes>
+        )
       ) : (
         <Routes>
           <Route
