@@ -1,20 +1,22 @@
 import safreImg from "../../assets/image/Sa-Fre.png";
 import imgPerfil from "../../assets/image/fotoPerfil.png";
 import iconArrow from "../../assets/icons/iconArrow.png";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div className="text-white flex justify-between p-5">
-      <div>
+    <div className="navbar">
+      <div className="navbar-logo">
         <img src={safreImg} alt="LogoSafre" />
       </div>
-      <div className="flex border-l border-white gap-5 items-center ">
-        <div className="flex-col pl-5">
+
+      <div className="navbar-user-section">
+        <div className="navbar-user-info">
           <p>Nombre Apellido</p>
-          <p className="text-right">Admin</p>
+          <p>Admin</p>
         </div>
-        <img src={imgPerfil} alt="imgPerfil" />
-        <img className="w-5 h-5" src={iconArrow} alt="arrow" />
+        <img className="navbar-user-img" src={imgPerfil} alt="imgPerfil" />
+        <img className="navbar-arrow-icon" src={iconArrow} alt="arrow" />
       </div>
     </div>
   );

@@ -6,25 +6,75 @@ import Asidebar from "./components/asidebar/Asidebar";
 import Home from "./view/home/Home";
 import LandingPage from "./view/landingPage/LandingPage";
 import Login from "./view/login/Login";
+import Pay from "./view/pay/Pay";
+import Products from "./view/products/Products";
+import Settings from "./view/settings/Settings";
+import Tables from "./view/tables/Table";
+import Statistics from "./view/stathetics/Statistics";
+import SingUp from "./view/singUp/singUp"
+
 
 //? hook
-// import { useSelector } from "react-redux";
-// import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated]= useState(false)
+  const [isRegistered, setIsRegistered]= useState(false)
+  const [showLanding, setShowLanding] = useState(true);
+
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setShowLanding(false);
+    }
+  }, [location]);
+
   return (
     <>
-      <Navbar />
-      <Asidebar />
-
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      {!showLanding ? (
+        isAuthenticated || isRegistered ? (
+          <div className="app-container">
+            <div className="sidebar">
+              <Asidebar />
+            </div>
+            <div className="navbar">
+              <Navbar className="w-full" />
+            </div>
+            <div className="content">
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/pay" element={<Pay />} />
+                <Route path="/cards" element={<Products />} />
+                <Route path="/setting" element={<Settings />} />
+                <Route path="/table" element={<Tables />} />
+                <Route path="/statistics" element={<Statistics />} />
+              </Routes>
+            </div>
+          </div>
+        ) : (
+          <Routes>
+            <Route
+              path="/login"
+              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+            />
+            <Route
+              path="/singUp"
+              element={<SingUp setIsRegistered={setIsRegistered} />}
+            />
+          </Routes>
+        )
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={<LandingPage onEnter={() => navigate("/login")} />}
+          />
+        </Routes>
+      )}
     </>
   );
 }

@@ -1,8 +1,25 @@
-#root {
-  /* max-width: 1280px; */
-  margin: 0;
-  padding: 0;
-  background-color: #252836;
-  
+.app-container {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  grid-row: span 2;
+  background-color: #1a202c; /* bg-gray-900 */
+  color: white;
+}
+
+.navbar {
+  background-color: #2d3748; /* bg-gray-800 */
+  color: white;
+  padding: 0 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  background-color: #f7fafc; 
 }
 
