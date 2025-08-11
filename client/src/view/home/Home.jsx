@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <header className="header">
-        <h1 className="title">Mesas</h1>
+        <h1 className="title-header">Mesas</h1>
       </header>
       <main className="main-container">
         <section className="main-section">
