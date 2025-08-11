@@ -14,6 +14,12 @@
     flex-direction: row;
 }
 
+.title-header{
+    color: black;
+    font-family: "Barlow", sans-serif;
+    font-size: 25px;
+    margin-left: 20px;
+}
 .aside-container{
     display: flex;
     flex-direction: column;
@@ -25,6 +31,11 @@
 
 .aside-title{
     width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border: 1px solid black;
     color: white;
@@ -35,18 +46,34 @@
     flex-direction: column;
     gap: 15px;
     color: white;
+    width: 100%;
+    height: 100%;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 10px;
+}
+.aside-labels select{
+    color: white;
+    margin-left: 10px;
+    width: 120px;
+    background-color: #252836;
+    border: 1px solid white;
 }
 
 .aside-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-top: 1px solid white;
     padding: 10px;
-    background-color: #EA7C69;
-    border-radius: 10px;
     color: white;
     width: 100%;
-    height: 100%;
+    height: 20%;
 }
 .aside-buttons button{
-    width: 15px;
-    height: 10px;
+    background-color: #EA7C69;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
 }
