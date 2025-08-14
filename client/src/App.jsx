@@ -3,15 +3,15 @@ import Navbar from "./components/navbar/Navbar";
 import Asidebar from "./components/asidebar/Asidebar";
 
 //? view
-import Home from "./view/home/Home";
 import LandingPage from "./view/landingPage/LandingPage";
 import Login from "./view/login/Login";
+import SingUp from "./view/singUp/singUp"
+import Home from "./view/home/Home";
+import Tables from "./view/tables/Table";
 import Pay from "./view/pay/Pay";
 import Products from "./view/products/Products";
-import Settings from "./view/settings/Settings";
-import Tables from "./view/tables/Table";
 import Statistics from "./view/stathetics/Statistics";
-import SingUp from "./view/singUp/singUp"
+import Settings from "./view/settings/Settings";
 
 
 //? hook
@@ -47,11 +47,11 @@ function App() {
             <div className="content">
               <Routes>
                 <Route path="/home" element={<Home />} />
-                <Route path="/pay" element={<Pay />} />
-                <Route path="/cards" element={<Products />} />
-                <Route path="/setting" element={<Settings />} />
                 <Route path="/table" element={<Tables />} />
+                <Route path="/pay" element={<Pay />} />
+                <Route path="/products" element={<Products />} />
                 <Route path="/statistics" element={<Statistics />} />
+                <Route path="/setting" element={<Settings />} />
               </Routes>
             </div>
           </div>
