@@ -1,42 +1,54 @@
 import { useState } from "react";
+import "./Pay.css";
+import loro from "../../assets/image/imagen-vectorial.jpg";
 
 function Pay() {
   const [activeSection, setActiveSection] = useState(null);
 
   return (
-    <div className="flex flex-col items-center p-6 text-left text-black bg-gray-900 min-h-screen ">
-      {/*Franja superior*/}
-      <div className="w-full bg-white p-3 text-lg font-bold">Pagos/Ventas</div>
-      {/*Botones*/}
-      <div className="w-full bg-white flex justify-left gap-4 py-3 my-5 p-3 rounded-lg">
-        <button
-          className={`px-4 py-2 rounded-lg transition-all ${
-            activeSection === "ventas"
-              ? "bg-black text-white"
-              : "bg-white text-black border border-gray-400"
-          }`}
-          onClick={() => setActiveSection("ventas")}
-        >
-          Ventas
-        </button>
-        <button
-          className={`px-4 py-2 rounded-lg transition-all ${
-            activeSection === "movimientos"
-              ? "bg-black text-white"
-              : "bg-white text-black border border-gray-400"
-          }`}
-          onClick={() => setActiveSection("movimientos")}
-        >
-          Movimientos de Caja
-        </button>
-      </div>
-      {/*Contenido Dinamico*/}
-      <div className="w-full p-5 bg-gray-800 rounded-lg">
-        {activeSection === "ventas" && <div>Contenido de Ventas</div>}
-        {activeSection === "movimientos" && (
-          <div>Contenido de Movimientos de Caja</div>
-        )}
-        {!activeSection && <div>Selecciona una opción</div>}
+    <div className="pay-container">
+      {/* Franja superior */}
+      <header className="pay-header">
+        <h1>Pagos/Ventas</h1>
+      </header>
+
+      <div className="pay-main">
+        {/* Lado izquierdo */}
+        <div className="pay-left">
+          <nav className="pay-nav">
+            <button
+              className={`pay-btn ${
+                activeSection === "ventas" ? "active" : ""
+              }`}
+              onClick={() => setActiveSection("ventas")}
+            >
+              Ventas
+            </button>
+            <button
+              className={`pay-btn ${
+                activeSection === "movimientos" ? "active" : ""
+              }`}
+              onClick={() => setActiveSection("movimientos")}
+            >
+              Movimientos de Caja
+            </button>
+          </nav>
+
+          <main className="pay-content">
+            {activeSection === "ventas" && (
+              <section>Contenido de Ventas</section>
+            )}
+            {activeSection === "movimientos" && (
+              <section>Contenido de Movimientos de Caja</section>
+            )}
+            {!activeSection && <section>Selecciona una opción</section>}
+          </main>
+        </div>
+
+        {/* Lado derecho */}
+        <div className="pay-right">
+          <img src={loro} alt="" className="home-image" />
+        </div>
       </div>
     </div>
   );
