@@ -36,7 +36,7 @@ function Pay() {
 
           <main className="pay-content">
             {activeSection === "ventas" && (
-              <section>Contenido de Ventas</section>
+              <section>Contenido de ventassss</section>
             )}
             {activeSection === "movimientos" && (
               <section>Contenido de Movimientos de Caja</section>
